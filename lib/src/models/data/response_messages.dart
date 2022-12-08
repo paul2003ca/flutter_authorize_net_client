@@ -14,7 +14,7 @@ class ResponseMessages {
   @JsonKey(name: 'resultCode')
   final String? resultCode;
   @JsonKey(name: 'message')
-  final List<ResponseMessage>? message;
+  final List<ResponseMessage?>? message;
 
   ResponseMessages(this.resultCode, this.message);
 

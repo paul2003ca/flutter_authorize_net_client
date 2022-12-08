@@ -1,5 +1,6 @@
 library flutter_authorize_net_client;
 
+import 'dart:async';
 import 'dart:convert';
 
 import 'src/models/models.dart';
