@@ -102,9 +102,9 @@ class AuthorizeNetClient {
     var responseJson = await (executeRequest(
       baseApi,
       authenticationTestRequest.getRequestJson(),
-    ) as FutureOr<String>);
+    ) as FutureOr<String?>);
     final response =
-        AuthenticationTestResponse.fromJson(jsonDecode(responseJson));
+        AuthenticationTestResponse.fromJson(jsonDecode(responseJson!));
     return response;
   }
 
@@ -151,9 +151,9 @@ class AuthorizeNetClient {
     var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    ) as FutureOr<String>);
+    ) as FutureOr<String?>);
     final response =
-        CreateTransactionResponse.fromJson(jsonDecode(responseJson));
+        CreateTransactionResponse.fromJson(jsonDecode(responseJson!));
     return response;
   }
 
@@ -197,9 +197,9 @@ class AuthorizeNetClient {
     var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    ) as FutureOr<String>);
+    ) as FutureOr<String?>);
     final response =
-        CreateTransactionResponse.fromJson(jsonDecode(responseJson));
+        CreateTransactionResponse.fromJson(jsonDecode(responseJson!));
     return response;
   }
 
@@ -244,9 +244,9 @@ class AuthorizeNetClient {
     var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    ) as FutureOr<String>);
+    ) as FutureOr<String?>);
     final response =
-        CreateTransactionResponse.fromJson(jsonDecode(responseJson));
+        CreateTransactionResponse.fromJson(jsonDecode(responseJson!));
     return response;
   }
 
@@ -285,9 +285,9 @@ class AuthorizeNetClient {
     var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    ) as FutureOr<String>);
+    ) as FutureOr<String?>);
     final response =
-        CreateTransactionResponse.fromJson(jsonDecode(responseJson));
+        CreateTransactionResponse.fromJson(jsonDecode(responseJson!));
     return response;
   }
 }
