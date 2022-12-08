@@ -8,9 +8,9 @@ part of 'credit_card.dart';
 
 CreditCard _$CreditCardFromJson(Map<String, dynamic> json) {
   return CreditCard(
-    cardNumber: json['cardNumber'] as String,
-    expirationDate: json['expirationDate'] as String,
-    cardCode: json['cardCode'] as String,
+    cardNumber: json['cardNumber'] as String?,
+    expirationDate: json['expirationDate'] as String?,
+    cardCode: json['cardCode'] as String?,
   );
 }
 

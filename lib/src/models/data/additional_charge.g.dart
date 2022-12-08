@@ -8,9 +8,9 @@ part of 'additional_charge.dart';
 
 AdditionalCharge _$AdditionalChargeFromJson(Map<String, dynamic> json) {
   return AdditionalCharge(
-    json['amount'] as String,
-    json['name'] as String,
-    json['description'] as String,
+    json['amount'] as String?,
+    json['name'] as String?,
+    json['description'] as String?,
   );
 }
 

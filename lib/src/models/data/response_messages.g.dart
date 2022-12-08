@@ -8,8 +8,8 @@ part of 'response_messages.dart';
 
 ResponseMessages _$ResponseMessagesFromJson(Map<String, dynamic> json) {
   return ResponseMessages(
-    json['resultCode'] as String,
-    (json['message'] as List)
+    json['resultCode'] as String?,
+    (json['message'] as List?)
         ?.map((e) => e == null
             ? null
             : ResponseMessage.fromJson(e as Map<String, dynamic>))

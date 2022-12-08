@@ -17,16 +17,16 @@ part 'create_transaction_response.g.dart';
 @JsonSerializable(explicitToJson: true)
 class CreateTransactionResponse {
   @JsonKey(name: 'transactionResponse')
-  final TransactionResponse transactionResponse;
+  final TransactionResponse? transactionResponse;
   @JsonKey(name: 'messages')
-  final ResponseMessages messages;
+  final ResponseMessages? messages;
 
   CreateTransactionResponse(this.transactionResponse, this.messages);
 
   factory CreateTransactionResponse.fromJson(Map<String, dynamic> json) =>
       _$CreateTransactionResponseFromJson(json);
 
-  Map<String, dynamic> toJson() =>
+  Map<String, dynamic>? toJson() =>
       removeNullsFromMap(_$CreateTransactionResponseToJson(this));
 
   bool get isSuccessful => verifyTransactionSuccess(this);

@@ -17,13 +17,13 @@ class CreateTransactionRequest {
   static const String Tag = 'createTransactionRequest';
 
   @JsonKey(name: 'merchantAuthentication')
-  final MerchantAuthentication merchantAuthentication;
+  final MerchantAuthentication? merchantAuthentication;
 
   @JsonKey(name: 'refId')
-  final String referenceID;
+  final String? referenceID;
 
   @JsonKey(name: 'transactionRequest')
-  final TransactionRequest transactionRequest;
+  final TransactionRequest? transactionRequest;
 
   CreateTransactionRequest(
     this.merchantAuthentication, {
@@ -31,7 +31,7 @@ class CreateTransactionRequest {
     this.transactionRequest,
   });
 
-  Map<String, dynamic> toJson() =>
+  Map<String, dynamic>? toJson() =>
       removeNullsFromMap(_$CreateTransactionRequestToJson(this));
 
   factory CreateTransactionRequest.fromJson(Map<String, dynamic> json) =>

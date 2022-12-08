@@ -25,25 +25,25 @@ class TransactionRequest {
   static const String TAG_VOID_TRANSACTION = 'voidTransaction';
 
   @JsonKey(name: 'transactionType')
-  final String transactionType;
+  final String? transactionType;
   @JsonKey(name: 'amount')
-  final String amount; // int based value
+  final String? amount; // int based value
   @JsonKey(name: 'currencyCode')
-  final String currencyCode; // ISO-4217, 3 char currency code
+  final String? currencyCode; // ISO-4217, 3 char currency code
   @JsonKey(name: 'payment')
-  final Payment payment;
+  final Payment? payment;
   @JsonKey(name: 'refTransId')
-  final String refTransId;
+  final String? refTransId;
   @JsonKey(name: 'tax')
-  final AdditionalCharge tax;
+  final AdditionalCharge? tax;
   @JsonKey(name: 'duty')
-  final AdditionalCharge duty;
+  final AdditionalCharge? duty;
   @JsonKey(name: 'shipping')
-  final AdditionalCharge shipping;
+  final AdditionalCharge? shipping;
   @JsonKey(name: 'billTo')
-  final Address billTo;
+  final Address? billTo;
   @JsonKey(name: 'shipTo')
-  final Address shipTo;
+  final Address? shipTo;
 
   TransactionRequest(
     this.transactionType, {
@@ -63,11 +63,11 @@ class TransactionRequest {
     String amount,
     String currencyCode,
     Payment payment, {
-    Address billTo,
-    Address shipTo,
-    AdditionalCharge tax,
-    AdditionalCharge duty,
-    AdditionalCharge shipping,
+    Address? billTo,
+    Address? shipTo,
+    AdditionalCharge? tax,
+    AdditionalCharge? duty,
+    AdditionalCharge? shipping,
   }) {
     return TransactionRequest(
       TAG_AUTH_CAPTURE_TRANSACTION,
@@ -87,11 +87,11 @@ class TransactionRequest {
     String amount,
     String currencyCode,
     Payment payment, {
-    Address billTo,
-    Address shipTo,
-    AdditionalCharge tax,
-    AdditionalCharge duty,
-    AdditionalCharge shipping,
+    Address? billTo,
+    Address? shipTo,
+    AdditionalCharge? tax,
+    AdditionalCharge? duty,
+    AdditionalCharge? shipping,
   }) {
     return TransactionRequest(
       TAG_AUTH_ONLY_TRANSACTION,
@@ -141,7 +141,7 @@ class TransactionRequest {
   factory TransactionRequest.fromJson(Map<String, dynamic> json) =>
       _$TransactionRequestFromJson(json);
 
-  Map<String, dynamic> toJson() =>
+  Map<String, dynamic>? toJson() =>
       removeNullsFromMap(_$TransactionRequestToJson(this));
 }
 

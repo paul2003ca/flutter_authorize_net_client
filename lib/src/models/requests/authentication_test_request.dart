@@ -11,14 +11,14 @@ part 'authentication_test_request.g.dart';
 class AuthenticationTestRequest {
   static const String Tag = 'authenticateTestRequest';
   @JsonKey(name: 'merchantAuthentication')
-  final MerchantAuthentication merchantAuthentication;
+  final MerchantAuthentication? merchantAuthentication;
 
   AuthenticationTestRequest(this.merchantAuthentication);
 
   factory AuthenticationTestRequest.fromJson(Map<String, dynamic> json) =>
       _$AuthenticationTestRequestFromJson(json);
 
-  Map<String, dynamic> toJson() =>
+  Map<String, dynamic>? toJson() =>
       removeNullsFromMap(_$AuthenticationTestRequestToJson(this));
 
   Map<String, dynamic> getRequestJson() {

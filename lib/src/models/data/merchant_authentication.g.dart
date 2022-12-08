@@ -9,8 +9,8 @@ part of 'merchant_authentication.dart';
 MerchantAuthentication _$MerchantAuthenticationFromJson(
     Map<String, dynamic> json) {
   return MerchantAuthentication(
-    json['name'] as String,
-    json['transactionKey'] as String,
+    json['name'] as String?,
+    json['transactionKey'] as String?,
   );
 }
 

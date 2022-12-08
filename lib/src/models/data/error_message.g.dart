@@ -8,8 +8,8 @@ part of 'error_message.dart';
 
 ErrorMessage _$ErrorMessageFromJson(Map<String, dynamic> json) {
   return ErrorMessage(
-    json['errorCode'] as String,
-    json['errorText'] as String,
+    json['errorCode'] as String?,
+    json['errorText'] as String?,
   );
 }
 

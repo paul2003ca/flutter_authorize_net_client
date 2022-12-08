@@ -9,7 +9,7 @@ part 'payment.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Payment {
   @JsonKey(name: 'creditCard')
-  final CreditCard creditCard;
+  final CreditCard? creditCard;
 
   Payment({this.creditCard});
 
@@ -30,7 +30,7 @@ class Payment {
   factory Payment.fromJson(Map<String, dynamic> json) =>
       _$PaymentFromJson(json);
 
-  Map<String, dynamic> toJson() => removeNullsFromMap(_$PaymentToJson(this));
+  Map<String, dynamic>? toJson() => removeNullsFromMap(_$PaymentToJson(this));
 }
 
 /*{

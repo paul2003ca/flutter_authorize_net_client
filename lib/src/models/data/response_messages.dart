@@ -12,16 +12,16 @@ class ResponseMessages {
   static const String STATUS_OK = 'Ok';
 
   @JsonKey(name: 'resultCode')
-  final String resultCode;
+  final String? resultCode;
   @JsonKey(name: 'message')
-  final List<ResponseMessage> message;
+  final List<ResponseMessage>? message;
 
   ResponseMessages(this.resultCode, this.message);
 
   factory ResponseMessages.fromJson(Map<String, dynamic> json) =>
       _$ResponseMessagesFromJson(json);
 
-  Map<String, dynamic> toJson() =>
+  Map<String, dynamic>? toJson() =>
       removeNullsFromMap(_$ResponseMessagesToJson(this));
 }
 

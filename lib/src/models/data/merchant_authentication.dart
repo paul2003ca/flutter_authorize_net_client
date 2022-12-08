@@ -9,13 +9,13 @@ part 'merchant_authentication.g.dart';
 @JsonSerializable(explicitToJson: true)
 class MerchantAuthentication {
   @JsonKey(name: 'name')
-  final String name;
+  final String? name;
   @JsonKey(name: 'transactionKey')
-  final String transactionKey;
+  final String? transactionKey;
 
   MerchantAuthentication(this.name, this.transactionKey);
 
-  Map<String, dynamic> toJson() =>
+  Map<String, dynamic>? toJson() =>
       removeNullsFromMap(_$MerchantAuthenticationToJson(this));
 
   factory MerchantAuthentication.fromJson(Map<String, dynamic> json) =>

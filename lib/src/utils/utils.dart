@@ -1,7 +1,7 @@
 import '../models/models.dart';
 
 /// Method to remove the entries with null values to prevent any conflict in api process
-Map<T, R> removeNullsFromMap<T, R>(Map<T, R> map) {
+Map<T, R>? removeNullsFromMap<T, R>(Map<T, R> map) {
   if (map == null || map.isEmpty) return null;
   map..removeWhere((key, value) => value == null);
   return map;
@@ -16,7 +16,7 @@ bool verifyTransactionSuccess(CreateTransactionResponse response) {
 }
 
 /// Method to verify if the provided message contains success code  or not
-bool verifySuccessCode(ResponseMessages messages) {
+bool verifySuccessCode(ResponseMessages? messages) {
   final resultCode = messages?.resultCode;
   return resultCode == ResponseMessages.STATUS_OK;
 }

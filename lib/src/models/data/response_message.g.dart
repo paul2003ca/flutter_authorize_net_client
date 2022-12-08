@@ -8,9 +8,9 @@ part of 'response_message.dart';
 
 ResponseMessage _$ResponseMessageFromJson(Map<String, dynamic> json) {
   return ResponseMessage(
-    json['code'] as String,
-    json['text'] as String,
-    json['description'] as String,
+    json['code'] as String?,
+    json['text'] as String?,
+    json['description'] as String?,
   );
 }
 

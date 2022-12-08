@@ -18,35 +18,35 @@ part 'transaction_response.g.dart';
 @JsonSerializable(explicitToJson: true)
 class TransactionResponse {
   @JsonKey(name: 'responseCode')
-  final String responseCode;
+  final String? responseCode;
   @JsonKey(name: 'authCode')
-  final String authCode;
+  final String? authCode;
   @JsonKey(name: 'avsResultCode')
-  final String avsResultCode;
+  final String? avsResultCode;
   @JsonKey(name: 'cvvResultCode')
-  final String cvvResultCode;
+  final String? cvvResultCode;
   @JsonKey(name: 'cavvResultCode')
-  final String cavvResultCode;
+  final String? cavvResultCode;
   @JsonKey(name: 'transId')
-  final String transId;
+  final String? transId;
   @JsonKey(name: 'refTransID')
-  final String refTransID;
+  final String? refTransID;
   @JsonKey(name: 'transHash')
-  final String transHash;
+  final String? transHash;
   @JsonKey(name: 'testRequest')
-  final String testRequest;
+  final String? testRequest;
   @JsonKey(name: 'accountNumber')
-  final String accountNumber;
+  final String? accountNumber;
   @JsonKey(name: 'accountType')
-  final String accountType;
+  final String? accountType;
   @JsonKey(name: 'messages')
-  List<ResponseMessage> messages;
+  List<ResponseMessage>? messages;
   @JsonKey(name: 'errors')
-  List<ErrorMessage> errors;
+  List<ErrorMessage>? errors;
   @JsonKey(name: 'transHashSha2')
-  final String transHashSha2;
+  final String? transHashSha2;
   @JsonKey(name: 'SupplementalDataQualificationIndicator')
-  final int supplementalDataQualificationIndicator;
+  final int? supplementalDataQualificationIndicator;
 
   TransactionResponse(
       this.responseCode,
@@ -67,7 +67,7 @@ class TransactionResponse {
   factory TransactionResponse.fromJson(Map<String, dynamic> json) =>
       _$TransactionResponseFromJson(json);
 
-  Map<String, dynamic> toJson() =>
+  Map<String, dynamic>? toJson() =>
       removeNullsFromMap(_$TransactionResponseToJson(this));
 }
 

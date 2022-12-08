@@ -8,13 +8,13 @@ part of 'transaction_request.dart';
 
 TransactionRequest _$TransactionRequestFromJson(Map<String, dynamic> json) {
   return TransactionRequest(
-    json['transactionType'] as String,
-    amount: json['amount'] as String,
-    currencyCode: json['currencyCode'] as String,
+    json['transactionType'] as String?,
+    amount: json['amount'] as String?,
+    currencyCode: json['currencyCode'] as String?,
     payment: json['payment'] == null
         ? null
         : Payment.fromJson(json['payment'] as Map<String, dynamic>),
-    refTransId: json['refTransId'] as String,
+    refTransId: json['refTransId'] as String?,
     billTo: json['billTo'] == null
         ? null
         : Address.fromJson(json['billTo'] as Map<String, dynamic>),

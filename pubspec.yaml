@@ -5,7 +5,7 @@ homepage: https://github.com/GAM3RG33K/flutter_authorize_net_client
 repository: https://github.com/GAM3RG33K/flutter_authorize_net_client
 
 environment:
-  sdk: '>=2.7.0 <3.3.0'
+  sdk: '>=2.12.0 <3.0.0'
   flutter: '>=1.17.0'
 
 dependencies:

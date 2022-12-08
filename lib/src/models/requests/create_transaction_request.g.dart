@@ -13,7 +13,7 @@ CreateTransactionRequest _$CreateTransactionRequestFromJson(
         ? null
         : MerchantAuthentication.fromJson(
             json['merchantAuthentication'] as Map<String, dynamic>),
-    referenceID: json['refId'] as String,
+    referenceID: json['refId'] as String?,
     transactionRequest: json['transactionRequest'] == null
         ? null
         : TransactionRequest.fromJson(

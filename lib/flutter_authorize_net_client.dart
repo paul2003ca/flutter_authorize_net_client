@@ -48,7 +48,7 @@ class AuthorizeNetClient {
   );
 
   /// static instance to implement singleton pattern
-  static AuthorizeNetClient _instance;
+  static AuthorizeNetClient? _instance;
 
   /// factory method to check & instantiate AuthorizeNetClient instance only once
   factory AuthorizeNetClient(
@@ -63,7 +63,7 @@ class AuthorizeNetClient {
         environment,
       );
     }
-    return _instance;
+    return _instance!;
   }
 
   /// Getter for api url, value is based on the current type of [environment]
@@ -98,10 +98,10 @@ class AuthorizeNetClient {
     final authenticationTestRequest =
         AuthenticationTestRequest(merchantAuthentication);
 
-    var responseJson = await executeRequest(
+    var responseJson = await (executeRequest(
       baseApi,
       authenticationTestRequest.getRequestJson(),
-    );
+    ) as FutureOr<String>);
     final response =
         AuthenticationTestResponse.fromJson(jsonDecode(responseJson));
     return response;
@@ -137,7 +137,7 @@ class AuthorizeNetClient {
     String cardNumber,
     String expirationDate,
     String cardCode, {
-    String referenceID,
+    String? referenceID,
   }) async {
     final transactionRequest = TransactionRequest.authCaptureTransaction(amount,
         currencyCode, Payment.creditCard(cardNumber, expirationDate, cardCode));
@@ -147,10 +147,10 @@ class AuthorizeNetClient {
       transactionRequest: transactionRequest,
     );
 
-    var responseJson = await executeRequest(
+    var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    );
+    ) as FutureOr<String>);
     final response =
         CreateTransactionResponse.fromJson(jsonDecode(responseJson));
     return response;
@@ -183,7 +183,7 @@ class AuthorizeNetClient {
     String cardNumber,
     String expirationDate,
     String cardCode, {
-    String referenceID,
+    String? referenceID,
   }) async {
     final transactionRequest = TransactionRequest.authOnlyTransaction(amount,
         currencyCode, Payment.creditCard(cardNumber, expirationDate, cardCode));
@@ -193,10 +193,10 @@ class AuthorizeNetClient {
       transactionRequest: transactionRequest,
     );
 
-    var responseJson = await executeRequest(
+    var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    );
+    ) as FutureOr<String>);
     final response =
         CreateTransactionResponse.fromJson(jsonDecode(responseJson));
     return response;
@@ -227,7 +227,7 @@ class AuthorizeNetClient {
     String amount,
     String currencyCode,
     String referenceTransactionID, {
-    String referenceID,
+    String? referenceID,
   }) async {
     final transactionRequest = TransactionRequest.priorAuthCaptureTransaction(
       amount,
@@ -240,10 +240,10 @@ class AuthorizeNetClient {
       transactionRequest: transactionRequest,
     );
 
-    var responseJson = await executeRequest(
+    var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    );
+    ) as FutureOr<String>);
     final response =
         CreateTransactionResponse.fromJson(jsonDecode(responseJson));
     return response;
@@ -270,7 +270,7 @@ class AuthorizeNetClient {
   /// Reference: https://developer.authorize.net/api/reference/index.html#payment-transactions-void-a-transaction
   Future<CreateTransactionResponse> voidTransaction(
     String referenceTransactionID, {
-    String referenceID,
+    String? referenceID,
   }) async {
     final transactionRequest = TransactionRequest.voidTransaction(
       referenceTransactionID,
@@ -281,10 +281,10 @@ class AuthorizeNetClient {
       transactionRequest: transactionRequest,
     );
 
-    var responseJson = await executeRequest(
+    var responseJson = await (executeRequest(
       baseApi,
       createTransactionRequest.getRequestJson(),
-    );
+    ) as FutureOr<String>);
     final response =
         CreateTransactionResponse.fromJson(jsonDecode(responseJson));
     return response;
