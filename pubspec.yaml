@@ -13,18 +13,18 @@ dependencies:
     sdk: flutter
 
   # for HTTP requests
-  http: ^0.13.0
+  http: ^0.13.5
   # do not change version before implementing null-safety
   # for data model to/from json conversion
-  json_annotation: ">=3.1.1"
+  json_annotation: ^4.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # do not change version before implementing null-safety
-  build_runner: ^1.0.0
+  build_runner: ^2.3.2
   # do not change version before implementing null-safety
-  json_serializable: ^3.5.1
+  json_serializable: ^6.5.4
 
 
 flutter:
